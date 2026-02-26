@@ -10,8 +10,14 @@ import interviewRouter from "./routes/interview.route.js"
 import paymentRouter from "./routes/payment.route.js"
 
 const app = express()
+
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://interview-dost.vercel.app"
+]
+
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin: allowedOrigins,
     credentials:true
 }))
 
